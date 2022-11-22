@@ -24,3 +24,23 @@ Array.prototype.uniq = function () {
 let arr = ["1", "test", "1", "a", "test", "a"]
 
 console.log(arr.uniq())
+
+
+// we want to return the indices of any elements that sum to zero
+// within the array, which we will then pass to our output array
+Array.prototype.twoSum = function () {
+  const output = [];
+    // this.forEach (num)
+    for (let step = 0; step < this.length; step++) {
+      let secondStep = this.indexOf(this[step] * -1);
+      if ( secondStep !== -1) {
+        output.push([step, secondStep]);
+      }
+    }
+  return output
+}
+
+let arr2 = [-1, 0, 5, 3, 7, 89, 1, -88, -89, 0, -5]
+
+console.log(arr2.twoSum())
+
